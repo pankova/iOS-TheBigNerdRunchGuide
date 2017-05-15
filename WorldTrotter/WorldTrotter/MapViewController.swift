@@ -51,40 +51,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         trailingConstraint.isActive = true
     }
     
-    // чтобы при сдвиге карты вернуться к обновившейся геопозиции
+// back to user's geoposition after map scroll
 //    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
 //        mapView.setCenter(userLocation.coordinate, animated: true)
 //    }
-    
-    func geoButtonAction(_ sender: UIButton!) {
-        let span = MKCoordinateSpan.init(latitudeDelta: 0.0075, longitudeDelta: 0.0075)
-        if locationManager.location != nil {
-            let region = MKCoordinateRegion.init(center: (locationManager.location?.coordinate)!, span: span)
-            mapView.setRegion(region, animated: true)
-        }
-    }
-    
-    func setLocation(_ place: MKPointAnnotation!){
-        let span = MKCoordinateSpan.init(latitudeDelta: 0.0075, longitudeDelta: 0.0075)
-        if place != nil{
-            let region = MKCoordinateRegion.init(center: (place.coordinate), span: span)
-            mapView.setRegion(region, animated: true)
-        }
-    }
-    
-    func pinButtonAction(_ sender: UIButton!) {
-        switch state {
-        case 0:
-            state += 1
-            setLocation(homePin)
-        case 1:
-            state += 1
-            setLocation(realHomePin)
-        default:
-            state = 0
-            setLocation(futureTravelPin)
-        }
-    }
     
     func mapTypeChanged(_ segControl: UISegmentedControl) {
         switch segControl.selectedSegmentIndex {
@@ -103,6 +73,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         print("Map loaded")
         
+        // 6: silver (Show user's location on the map)
         locationManager.requestWhenInUseAuthorization()
         
         mapView.showsUserLocation = true
@@ -124,8 +95,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         geoButton.addTarget(self, action: #selector(MapViewController.geoButtonAction(_:)), for: .touchUpInside)
         
         view.addSubview(geoButton)
+        //end of task
 
-
+        // 6: gold (Dropping pins)
         // ** MapPins options (set some pins on the map) **
         
         // homePin
@@ -181,6 +153,37 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         pinButton.addTarget(self, action: #selector(MapViewController.pinButtonAction(_:)), for: .touchUpInside)
         
         view.addSubview(pinButton)
+    }
+    
+    func pinButtonAction(_ sender: UIButton!) {
+        switch state {
+        case 0:
+            state += 1
+            setLocation(homePin)
+        case 1:
+            state += 1
+            setLocation(realHomePin)
+        default:
+            state = 0
+            setLocation(futureTravelPin)
+        }
+    }
+    
+    func setLocation(_ place: MKPointAnnotation!){
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.0075, longitudeDelta: 0.0075)
+        if place != nil{
+            let region = MKCoordinateRegion.init(center: (place.coordinate), span: span)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    // end of task
+    
+    func geoButtonAction(_ sender: UIButton!) {
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.0075, longitudeDelta: 0.0075)
+        if locationManager.location != nil {
+            let region = MKCoordinateRegion.init(center: (locationManager.location?.coordinate)!, span: span)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
