@@ -84,6 +84,7 @@ class ViewController: UIViewController {
 //                                    self.updateOffScreenLabel()
 //                                    })
         
+        // 8: bronze (Spring animation)
         UIView.animate(withDuration: 1.0,
                                    delay: 0,
                                    usingSpringWithDamping: 1.0, initialSpringVelocity:0.5,
@@ -101,6 +102,7 @@ class ViewController: UIViewController {
         
                                             self.updateOffScreenLabel()
         })
+        // end of task
         
     }
     
