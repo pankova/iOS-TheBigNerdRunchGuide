@@ -15,7 +15,6 @@
 		A831D6991E991DD400B5A4A4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A831D6981E991DD400B5A4A4 /* MapKit.framework */; };
 		A831D69B1E9A8C5E00B5A4A4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A831D69A1E9A8C5D00B5A4A4 /* MapViewController.swift */; };
 		A83D7F341E9E6F5B00349A41 /* WebNerdRanchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D7F331E9E6F5B00349A41 /* WebNerdRanchViewController.swift */; };
-		A83D7F361E9E7E5F00349A41 /* Emoji.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A83D7F351E9E7E5F00349A41 /* Emoji.ttf */; };
 		A858523F1EA519E900753D59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A85852411EA519E900753D59 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -157,7 +156,6 @@
 			files = (
 				A858523F1EA519E900753D59 /* Localizable.strings in Resources */,
 				A831D68F1E952F8C00B5A4A4 /* LaunchScreen.storyboard in Resources */,
-				A83D7F361E9E7E5F00349A41 /* Emoji.ttf in Resources */,
 				A831D68C1E952F8C00B5A4A4 /* Assets.xcassets in Resources */,
 				A831D68A1E952F8C00B5A4A4 /* Main.storyboard in Resources */,
 			);

@@ -7,30 +7,6 @@
 //
 
 import UIKit
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
-// Consider refactoring the code to use the non-optional operators.
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
 
 class ConversionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var celsiusLabel: UILabel!
@@ -78,14 +54,13 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         return nf
     }()
     
-    // метод делегата
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                                                  replacementString string: String) -> Bool {
         // 4: bronze (Dissallow Alphabetic Characters)
         let set = CharacterSet.decimalDigits
         for characet in string.utf16 {
-            // 46 - символ точки, для decimal помимо цифр тоже нужна, 44 - запятая для разных стран
+            // 46 - point, 44 - comma
             if !set.contains(UnicodeScalar(characet)!) && !(characet == 46) && !(characet == 44){
                 return false
             }
@@ -120,7 +95,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let userHours = dateFormatter.string(from: date)
         
         let color: UIColor
-        if Int(userHours) > 6 && Int(userHours) < 18 {
+        if Int(userHours)! > 6 && Int(userHours)! < 18 {
             color = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         } else {
             color = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)

@@ -5,9 +5,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app uses location so it can show where you are currently on a map</string>
 	<key>UIAppFonts</key>
-	<array>
-		<string>Emoji.ttf</string>
-	</array>
+	<array/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
