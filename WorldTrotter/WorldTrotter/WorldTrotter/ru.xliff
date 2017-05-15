@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="WorldTrotter/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body/>
+  </file>
+  <file original="WorldTrotter/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="1N5-02-Kfl.title">
+        <source>NerdRanch</source>
+        <target>NerdRanch</target>
+        <note>Class = "UITabBarItem"; title = "NerdRanch"; ObjectID = "1N5-02-Kfl";</note>
+      </trans-unit>
+      <trans-unit id="3P0-g7-lEG.title">
+        <source>Convert</source>
+        <target>Конвертер</target>
+        <note>Class = "UITabBarItem"; title = "Convert"; ObjectID = "3P0-g7-lEG";</note>
+      </trans-unit>
+      <trans-unit id="AqD-km-28K.text">
+        <source>100</source>
+        <target>100</target>
+        <note>Class = "UILabel"; text = "100"; ObjectID = "AqD-km-28K";</note>
+      </trans-unit>
+      <trans-unit id="KVx-Tp-0Ch.text">
+        <source>124sgg🏠</source>
+        <target>124sgg🏠</target>
+        <note>Class = "UILabel"; text = "124sgg🏠"; ObjectID = "KVx-Tp-0Ch";</note>
+      </trans-unit>
+      <trans-unit id="NbQ-sF-hUS.placeholder">
+        <source>value</source>
+        <target>значение</target>
+        <note>Class = "UITextField"; placeholder = "value"; ObjectID = "NbQ-sF-hUS";</note>
+      </trans-unit>
+      <trans-unit id="Pa8-aZ-WA5.text">
+        <source>degrees Farenheit</source>
+        <target>градусов по Фаренгейту</target>
+        <note>Class = "UILabel"; text = "degrees Farenheit"; ObjectID = "Pa8-aZ-WA5";</note>
+      </trans-unit>
+      <trans-unit id="awj-Ga-4FJ.title">
+        <source>Map</source>
+        <target>Карта</target>
+        <note>Class = "UITabBarItem"; title = "Map"; ObjectID = "awj-Ga-4FJ";</note>
+      </trans-unit>
+      <trans-unit id="bPV-14-xi0.text">
+        <source>degrees Celsius</source>
+        <target>градусов по Цельсию</target>
+        <note>Class = "UILabel"; text = "degrees Celsius"; ObjectID = "bPV-14-xi0";</note>
+      </trans-unit>
+      <trans-unit id="x7q-FK-08H.text">
+        <source>is really</source>
+        <target>это</target>
+        <note>Class = "UILabel"; text = "is really"; ObjectID = "x7q-FK-08H";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="WorldTrotter/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.3.1" build-num="7D1014"/>
+    </header>
+    <body>
+      <trans-unit id="Hybrid">
+        <source>Hybrid</source>
+        <target>Смешанная</target>
+        <note>Hybrid map view</note>
+      </trans-unit>
+      <trans-unit id="Satelite">
+        <source>Satelite</source>
+        <target>Спутник</target>
+        <note>Satelite map view</note>
+      </trans-unit>
+      <trans-unit id="Standard">
+        <source>Standard</source>
+        <target>Стандартная</target>
+        <note>Standard map view</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
