@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         
         nameField.text = item.name
         serialNumberField.text = item.serialNumber
-        valueField.text = numberFormatter.string(from: NSNumber(item.valueInDollars))
+        valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
     }
 }
