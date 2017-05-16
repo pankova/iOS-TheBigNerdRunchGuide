@@ -27,7 +27,7 @@ class ItemsViewController: UITableViewController {
             return cell
 
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! Item
             cell.updateLabels()
             
             if let baseItem = item as? Item {

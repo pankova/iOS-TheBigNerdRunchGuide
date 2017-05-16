@@ -11,10 +11,12 @@ import UIKit
 class ItemStore {
     var allItems = [NSObject]()
     
+    // 9: silver (Constant Rows)
     init(){
         let item = StubItem(name: "No more items!")
         allItems.append(item)
     }
+    // end of task
     
     func createItem() -> Item {
         let newItem = Item(random: true)
