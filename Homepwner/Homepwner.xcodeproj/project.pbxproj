@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		A81E8A291EAB44A900747927 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81E8A281EAB44A900747927 /* Item.swift */; };
+		A84493371ECB3EDC00B74B1F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84493361ECB3EDC00B74B1F /* ItemCell.swift */; };
 		A864AE2D1EAB26B500208EE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A864AE2C1EAB26B500208EE3 /* AppDelegate.swift */; };
 		A864AE321EAB26B500208EE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A864AE301EAB26B500208EE3 /* Main.storyboard */; };
 		A864AE341EAB26B500208EE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A864AE331EAB26B500208EE3 /* Assets.xcassets */; };
 		A864AE371EAB26B500208EE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A864AE351EAB26B500208EE3 /* LaunchScreen.storyboard */; };
 		A864AE3F1EAB366A00208EE3 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A864AE3E1EAB366A00208EE3 /* ItemsViewController.swift */; };
 		A8A5458A1EB8D10C0097C944 /* StubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A545891EB8D10C0097C944 /* StubItem.swift */; };
-		A8A5458C1EBA286E0097C944 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5458B1EBA286E0097C944 /* ItemCell.swift */; };
 		A8A5458E1EC2EB490097C944 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5458D1EC2EB490097C944 /* DetailViewController.swift */; };
 		A8C01A471EAB8DC8005611F9 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C01A461EAB8DC8005611F9 /* ItemStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A81E8A281EAB44A900747927 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A84493361ECB3EDC00B74B1F /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		A864AE291EAB26B500208EE3 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A864AE2C1EAB26B500208EE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A864AE311EAB26B500208EE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		A864AE381EAB26B500208EE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A864AE3E1EAB366A00208EE3 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		A8A545891EB8D10C0097C944 /* StubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubItem.swift; sourceTree = "<group>"; };
-		A8A5458B1EBA286E0097C944 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemCell.swift; path = ../ItemCell.swift; sourceTree = "<group>"; };
 		A8A5458D1EC2EB490097C944 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A8C01A461EAB8DC8005611F9 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 		A864AE2B1EAB26B500208EE3 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
-				A8A5458B1EBA286E0097C944 /* ItemCell.swift */,
+				A84493361ECB3EDC00B74B1F /* ItemCell.swift */,
 				A864AE2C1EAB26B500208EE3 /* AppDelegate.swift */,
 				A864AE301EAB26B500208EE3 /* Main.storyboard */,
 				A864AE331EAB26B500208EE3 /* Assets.xcassets */,
@@ -152,9 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84493371ECB3EDC00B74B1F /* ItemCell.swift in Sources */,
 				A8A5458A1EB8D10C0097C944 /* StubItem.swift in Sources */,
 				A864AE3F1EAB366A00208EE3 /* ItemsViewController.swift in Sources */,
-				A8A5458C1EBA286E0097C944 /* ItemCell.swift in Sources */,
 				A81E8A291EAB44A900747927 /* Item.swift in Sources */,
 				A8C01A471EAB8DC8005611F9 /* ItemStore.swift in Sources */,
 				A864AE2D1EAB26B500208EE3 /* AppDelegate.swift in Sources */,
