@@ -1,6 +1,6 @@
 # iOS-TheBigNerdRunchGuide
 
-This repo contains exercises in Swift from the book iOS Programming: The Big Nerd Ranch Guide (6th Edition).<br>
+This repo contains exercises in Swift from the book iOS Programming: The Big Nerd Ranch Guide (5th Edition).<br>
 The list below shows all tasks for every part and links to code with my solutions (short idea description is written in comments).
 
 <ol>
@@ -50,7 +50,7 @@ Bronze Challenge:
 <b>Controlling Animations</b><br>
 Bronze Challenge: 
 <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Quiz/Quiz/ViewController.swift#L87-L105">Spring Animations</a><br> 
-Silver Challenge: Layout Guides ¯ \ _ (ツ) _ / ¯
+Silver Challenge: Layout Guides ¯ \ _ (ツ) _ / ¯ (i didn't find bug from exercise)
 </li>
 
 <li>

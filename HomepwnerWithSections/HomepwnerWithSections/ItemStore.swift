@@ -22,5 +22,4 @@ class ItemStore {
             createItem()
         }
     }
-    
 }

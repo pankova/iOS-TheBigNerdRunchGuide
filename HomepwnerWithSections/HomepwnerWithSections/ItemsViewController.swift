@@ -10,6 +10,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
+    // 9: bronze (Sections)
     var sections = ["Econom", "Business"]
     let bound = 50
     var economItems = [Item]()
@@ -33,6 +34,7 @@ class ItemsViewController: UITableViewController {
             return businessItems.count
         }
     }
+    // end of task
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
@@ -69,14 +71,9 @@ class ItemsViewController: UITableViewController {
         tableView.insertSections([0,1], with: UITableViewRowAnimation.left)
         tableView.rowHeight = 60
         
-        //let backGround = UIImage(named: #imageLiteral(resourceName: "flower_back"))
         let backView = UIImageView(image: #imageLiteral(resourceName: "Bird"))
         backView.contentMode = .scaleAspectFit
         
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-//        let blurView = UIVisualEffectView(effect: blurEffect)
-//        blurView.frame = backView.bounds
-//        backView.addSubview(blurView)
         let color = UIColor(red: 1, green: 0.95, blue: 0.85, alpha: 1)
         tableView.backgroundColor = color
 
@@ -91,16 +88,9 @@ class ItemsViewController: UITableViewController {
         
         footerView.text = "No more items!"
         footerView.font = UIFont(name:"Arial", size: 18)
-//        let verticalCenterConstraint = footerView.centerYAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor,constant: 8)
-//        
-//        verticalCenterConstraint.isActive = true
 
-        //footerView.te
-        
         tableView.tableFooterView = footerView
         self.setDividingOnSectionsByBound()
-
-        
     }
     
     override public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -108,10 +98,7 @@ class ItemsViewController: UITableViewController {
     }
     
     override public func numberOfSections(in tableView: UITableView) -> Int  {
-        // #warning Incomplete implementation, return the number of sections
-        
         return self.sections.count
-        
     }
     
     
