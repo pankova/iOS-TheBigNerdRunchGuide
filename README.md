@@ -73,12 +73,12 @@ Bronze Challenge: Cell Colors<br>
 </li>
 
 <li>
-<b>StackViews (in progress)</b><br>
+<b>StackViews</b><br>
 Bronze Challenge: More Stack Views
 </li>
 
 <li>
-<b>UINavigationController</b>
+<b>UINavigationController (in progress)</b>
 </li>
 </ol>
 

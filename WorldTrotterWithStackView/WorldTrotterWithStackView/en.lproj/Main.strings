@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "NerdRanch"; ObjectID = "1N5-02-Kfl"; */
+"1N5-02-Kfl.title" = "NerdRanch";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "3P0-g7-lEG"; */
+"3P0-g7-lEG.title" = "Convert";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "AqD-km-28K"; */
+"AqD-km-28K.text" = "100";
+
+/* Class = "UILabel"; text = "124sgg🏠"; ObjectID = "KVx-Tp-0Ch"; */
+"KVx-Tp-0Ch.text" = "124sgg🏠";
+
+/* Class = "UITextField"; placeholder = "value"; ObjectID = "NbQ-sF-hUS"; */
+"NbQ-sF-hUS.placeholder" = "value";
+
+/* Class = "UILabel"; text = "degrees Farenheit"; ObjectID = "Pa8-aZ-WA5"; */
+"Pa8-aZ-WA5.text" = "degrees Farenheit";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "awj-Ga-4FJ"; */
+"awj-Ga-4FJ.title" = "Map";
+
+/* Class = "UILabel"; text = "degrees Celsius"; ObjectID = "bPV-14-xi0"; */
+"bPV-14-xi0.text" = "degrees Celsius";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "x7q-FK-08H"; */
+"x7q-FK-08H.text" = "is really";

@@ -22,6 +22,7 @@ class ItemsViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UIStubViewCell", for: indexPath)
             if let stubItem = item as? StubItem {
                 cell.textLabel?.text = stubItem.name
+                cell.textLabel?.font = UIFont(name:"Arial", size: 18)
                 cell.textLabel?.textAlignment = .center
             }
             return cell
@@ -46,6 +47,9 @@ class ItemsViewController: UITableViewController {
                 }
                 cell.valueLabel.font = font
             }
+            let backColor = UIColor(white: 1, alpha: 0.7)
+            cell.backgroundColor = backColor
+
             return cell
         }
     }
@@ -58,6 +62,15 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        let backView = UIImageView(image: #imageLiteral(resourceName: "Bird"))
+        backView.contentMode = .scaleAspectFit
+        
+        let color = UIColor(red: 1, green: 0.95, blue: 0.85, alpha: 1)
+        tableView.backgroundColor = color
+        
+        tableView.backgroundView = backView
+        tableView.backgroundView?.isOpaque = false
         
         //tableView.rowHeight = 65 better do this:
         tableView.rowHeight = UITableViewAutomaticDimension
