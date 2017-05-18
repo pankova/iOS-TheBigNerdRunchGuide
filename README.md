@@ -74,7 +74,7 @@ Bronze Challenge: Cell Colors<br>
 
 <li>
 <b>StackViews</b><br>
-Bronze Challenge: More Stack Views
+Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/QuizWithStackView">Quiz</a>, <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/WorldTrotterWithStackView">WorldThrotter</a>)<br> 
 </li>
 
 <li>
