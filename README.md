@@ -78,7 +78,15 @@ Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheB
 </li>
 
 <li>
-<b>UINavigationController (in progress)</b>
+<b>UINavigationController</b>
+Bronze Challenge: Displaying a Number Pad<br>
+<i>(Main.storyboard -> DetailViewController -> ValueTextField -> Attribure Inspector -> Keyboard Type -> Decimal Pad)</i><br>
+Silver Challenge: A Custom UITextField (in progress)<br>
+Gold Challenge: Pushing More View Controllers
+</li>
+
+<li>
+<b>Camera</b><br>
 </li>
 </ol>
 
