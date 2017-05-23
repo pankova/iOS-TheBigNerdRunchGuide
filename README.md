@@ -63,13 +63,13 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 <li>
 <b>Editing UITableView</b><br>
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L119-L122">Renaming the Delete Button</a><br>
-Silver Challenge: Preventing Reordering<br>
-Gold Challenge: Really Preventing Reordering
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L132-L137">Preventing Reordering</a><br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L109-L117">Really Preventing Reordering</a>
 </li>
 
 <li>
 <b>Subclassing UITableViewCell</b><br>
-Bronze Challenge: Cell Colors<br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L42-L47">Cell Colors</a><br>
 </li>
 
 <li>
