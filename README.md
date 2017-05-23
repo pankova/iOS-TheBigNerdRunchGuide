@@ -33,7 +33,7 @@ Silver Challenge:
 <li>
 <b>Programmatic Views</b><br>
 Bronze Challenge:
-<a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/WorldTrotter/WorldTrotter/WebNerdRanchViewController.swift">Another Tab</a><br>
+<a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/WorldTrotter/WorldTrotter/WebNerdRanchViewController.swift#L9-L31">Another Tab</a><br>
 Silver Challenge:
 <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/WorldTrotter/WorldTrotter/MapViewController.swift#L76-L98">User's Location</a><br>
 Gold Challenge:
@@ -74,15 +74,15 @@ Bronze Challenge: Cell Colors<br>
 
 <li>
 <b>StackViews</b><br>
-Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/QuizWithStackView">Quiz</a>, <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/WorldTrotterWithStackView">WorldThrotter</a>)<br> 
+Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/QuizWithStackView">Quiz</a>, <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/tree/master/WorldTrotterWithStackView">WorldThrotter</a> - solutions in Main.storyboard)<br> 
 </li>
 
 <li>
 <b>UINavigationController</b>
 Bronze Challenge: Displaying a Number Pad<br>
 <i>(Main.storyboard -> DetailViewController -> ValueTextField -> Attribure Inspector -> Keyboard Type -> Decimal Pad)</i><br>
-Silver Challenge: A Custom UITextField (in progress)<br>
-Gold Challenge: Pushing More View Controllers
+Silver Challenge: <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ColorBorderResponderTextField.swift#L9-L22">A Custom UITextField</a><br>
+Gold Challenge: Pushing More View Controllers (in progress)
 </li>
 
 <li>
