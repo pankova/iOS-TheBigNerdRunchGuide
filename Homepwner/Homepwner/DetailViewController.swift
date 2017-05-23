@@ -8,13 +8,21 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var serialNumberField: UITextField!
-    @IBOutlet var valueField: UITextField!
+class DetailViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet var nameField: ColorBorderResponderTextField!
+    @IBOutlet var serialNumberField: ColorBorderResponderTextField!
+    @IBOutlet var valueField: ColorBorderResponderTextField!
     @IBOutlet var dateLabel: UILabel!
     
-    var item: Item!
+    @IBAction func backgroundTapped(_ sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -38,5 +46,25 @@ class DetailViewController: UIViewController {
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        view.endEditing(true)
+        
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialNumberField.text
+        
+        if let valueText = valueField.text, let value = numberFormatter.number(from: valueText) {
+            item.valueInDollars = value.intValue
+        } else {
+            item.valueInDollars = 0
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
