@@ -121,7 +121,7 @@ class ItemsViewController: UITableViewController {
         return "Remove"
     }
     
-    //11:gold
+    // set constant row no editing mode
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if indexPath.row == (itemStore.allItems.count - 1) {
             return UITableViewCellEditingStyle.none;
