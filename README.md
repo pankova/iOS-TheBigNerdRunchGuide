@@ -50,19 +50,19 @@ Bronze Challenge:
 <b>Controlling Animations</b><br>
 Bronze Challenge: 
 <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Quiz/Quiz/ViewController.swift#L87-L105">Spring Animations</a><br> 
-Silver Challenge: Layout Guides ¯ \ _ (ツ) _ / ¯ (i didn't find bug from exercise)
+Silver Challenge: Layout Guides (in progress)
 </li>
 
 <li>
 <b>UITableView and UITableViewController</b><br>
-Bronze Challenge: Sections<br>
-Silver Challenge: Constant Rows<br>
-Gold Challenge: Customizing the Table
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/HomepwnerWithSections/HomepwnerWithSections/ItemsViewController.swift#L13-L37">Sections</a><br>
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemStore.swift#L14-L19">Constant Row</a> <br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L60-L67">Customizing the Table</a> (height and font changes made in Main.storyboard)
 </li>
 
 <li>
 <b>Editing UITableView</b><br>
-Bronze Challenge: Renaming the Delete Button<br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L119-L122">Renaming the Delete Button</a><br>
 Silver Challenge: Preventing Reordering<br>
 Gold Challenge: Really Preventing Reordering
 </li>
