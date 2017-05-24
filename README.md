@@ -82,11 +82,11 @@ Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheB
 Bronze Challenge: Displaying a Number Pad<br>
 <i>(Main.storyboard -> DetailViewController -> ValueTextField -> Attribure Inspector -> Keyboard Type -> Decimal Pad)</i><br>
 Silver Challenge: <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ColorBorderResponderTextField.swift#L9-L22">A Custom UITextField</a><br>
-Gold Challenge: Pushing More View Controllers (in progress)
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L76-L82">Pushing More View Controllers</a> (new <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ChooseDateViewController.swift#L10-L24">VC</a>)
 </li>
 
 <li>
-<b>Camera</b><br>
+<b>Camera (in progress)</b><br>
 </li>
 </ol>
 
