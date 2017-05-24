@@ -18,6 +18,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    func setDate(_ date: Date) {
+        let stringDate = dateFormatter.string(from: date)
+        dateLabel.text = stringDate
+    }
+    
     var item: Item! {
         didSet {
             navigationItem.title = item.name
@@ -67,4 +72,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    // 13: gold
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SetDate" {
+            let chooseDateViewController = segue.destination as! ChooseDateViewController
+            chooseDateViewController.item = item
+        }
+    }
+
 }

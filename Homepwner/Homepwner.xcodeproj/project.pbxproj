@@ -16,6 +16,7 @@
 		A864AE3F1EAB366A00208EE3 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A864AE3E1EAB366A00208EE3 /* ItemsViewController.swift */; };
 		A8A5458A1EB8D10C0097C944 /* StubItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A545891EB8D10C0097C944 /* StubItem.swift */; };
 		A8A5458E1EC2EB490097C944 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5458D1EC2EB490097C944 /* DetailViewController.swift */; };
+		A8BFFEA41ED5C714005B6352 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BFFEA31ED5C714005B6352 /* ChooseDateViewController.swift */; };
 		A8C01A471EAB8DC8005611F9 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C01A461EAB8DC8005611F9 /* ItemStore.swift */; };
 		A8C58E981ED1635B00AF29A7 /* ColorBorderResponderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C58E971ED1635B00AF29A7 /* ColorBorderResponderTextField.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		A864AE3E1EAB366A00208EE3 /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		A8A545891EB8D10C0097C944 /* StubItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubItem.swift; sourceTree = "<group>"; };
 		A8A5458D1EC2EB490097C944 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A8BFFEA31ED5C714005B6352 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseDateViewController.swift; sourceTree = "<group>"; };
 		A8C01A461EAB8DC8005611F9 /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		A8C58E971ED1635B00AF29A7 /* ColorBorderResponderTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBorderResponderTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				A8A545891EB8D10C0097C944 /* StubItem.swift */,
 				A8A5458D1EC2EB490097C944 /* DetailViewController.swift */,
 				A8C58E971ED1635B00AF29A7 /* ColorBorderResponderTextField.swift */,
+				A8BFFEA31ED5C714005B6352 /* ChooseDateViewController.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				A8A5458A1EB8D10C0097C944 /* StubItem.swift in Sources */,
 				A864AE3F1EAB366A00208EE3 /* ItemsViewController.swift in Sources */,
 				A81E8A291EAB44A900747927 /* Item.swift in Sources */,
+				A8BFFEA41ED5C714005B6352 /* ChooseDateViewController.swift in Sources */,
 				A8C01A471EAB8DC8005611F9 /* ItemStore.swift in Sources */,
 				A864AE2D1EAB26B500208EE3 /* AppDelegate.swift in Sources */,
 				A8C58E981ED1635B00AF29A7 /* ColorBorderResponderTextField.swift in Sources */,

@@ -174,11 +174,18 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jns-Oa-Z2X">
-                                        <rect key="frame" x="0.0" y="114" width="288" height="374"/>
+                                        <rect key="frame" x="0.0" y="114" width="288" height="336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iut-m3-q3n">
+                                        <rect key="frame" x="0.0" y="458" width="288" height="30"/>
+                                        <state key="normal" title="Change date"/>
+                                        <connections>
+                                            <segue destination="lOg-uP-RDN" kind="show" identifier="SetDate" id="N70-k9-ZWF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="hxT-cW-LBx" firstAttribute="leading" secondItem="OzK-Hr-fpO" secondAttribute="leading" id="dKR-4N-WPI"/>
@@ -213,6 +220,36 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1798.125" y="135.21126760563379"/>
+        </scene>
+        <!--Choose date-->
+        <scene sceneID="7CR-cd-0pL">
+            <objects>
+                <viewController title="Choose date" id="lOg-uP-RDN" customClass="ChooseDateViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ijt-SH-Cb4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zgd-es-Cn1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VWL-rW-teA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="L5M-rQ-jhT">
+                                <rect key="frame" x="0.0" y="149" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="517328230.62364697">
+                                    <!--2017-05-24 14:17:10 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="L5M-rQ-jhT" id="hbq-c1-6Hh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLI-QW-Z9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ey-Z1-xTN">
