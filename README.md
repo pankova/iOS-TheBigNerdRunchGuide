@@ -69,7 +69,7 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 
 <li>
 <b>Subclassing UITableViewCell</b><br>
-Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L42-L47">Cell Colors</a><br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L81-L87">Cell Colors</a><br>
 </li>
 
 <li>
@@ -81,7 +81,7 @@ Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheB
 <b>UINavigationController</b>
 Bronze Challenge: Displaying a Number Pad<br>
 <i>(Main.storyboard -> DetailViewController -> ValueTextField -> Attribure Inspector -> Keyboard Type -> Decimal Pad)</i><br>
-Silver Challenge: <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ColorBorderResponderTextField.swift#L9-L22">A Custom UITextField</a><br>
+Silver Challenge: <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ColorBorderResponderTextField.swift#L11-L22">A Custom UITextField</a><br>
 Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L129-L136">Pushing More View Controllers</a> (new <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ChooseDateViewController.swift#L10-L24">VC</a>)
 </li>
 
