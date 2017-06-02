@@ -10,7 +10,46 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
+    var imageStore: ImageStore!
     
+    
+    // MARK: - View life cycle
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        // 9: gold (Customizing the table)
+        let backView = UIImageView(image: #imageLiteral(resourceName: "Bird"))
+        backView.contentMode = .scaleAspectFit
+        
+        let color = UIColor(red: 1, green: 0.95, blue: 0.85, alpha: 1)
+        tableView.backgroundColor = color
+        
+        tableView.backgroundView = backView
+        tableView.backgroundView?.isOpaque = false
+        // end of task
+        
+        //tableView.rowHeight = 65 better do this:
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+        print("Bundle: \(Bundle.main.bundlePath)")
+        
+    }
+    
+    
+    // MARK: - Implement UITableViewController methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
@@ -54,30 +93,6 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let backView = UIImageView(image: #imageLiteral(resourceName: "Bird"))
-        backView.contentMode = .scaleAspectFit
-        
-        let color = UIColor(red: 1, green: 0.95, blue: 0.85, alpha: 1)
-        tableView.backgroundColor = color
-        
-        tableView.backgroundView = backView
-        tableView.backgroundView?.isOpaque = false
-        
-        //tableView.rowHeight = 65 better do this:
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 65
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        tableView.reloadData()
-    }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemStore.allItems[indexPath.row]
@@ -94,6 +109,7 @@ class ItemsViewController: UITableViewController {
                 let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
                                                  handler: { (action) -> Void in
                                                     self.itemStore.removeItem(item: baseItem)
+                                                    self.imageStore.deleteImageForKey(key: baseItem.itemKey)
                                                     tableView.deleteRows(at: [indexPath], with: .automatic)
                 })
                 ac.addAction(deleteAction)
@@ -124,18 +140,28 @@ class ItemsViewController: UITableViewController {
     // set constant row no editing mode
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if indexPath.row == (itemStore.allItems.count - 1) {
-            return UITableViewCellEditingStyle.none;
+            return .none
         }
-        return UITableViewCellEditingStyle.delete;
+        return .delete
     }
     
+    // 10 silver: Preventing Reordering
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         if indexPath.row == (itemStore.allItems.count - 1) {
             return false
         }
         return true
     }
-        
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.row == (itemStore.allItems.count - 1) {
+            return false
+        }
+        return true
+    }
+    
+    
+    // MARK: - ButtonActions
     @IBAction func addNewItem(sender: AnyObject) {
         let newItem = itemStore.createItem()
         if let index = itemStore.allItems.index(of: newItem) {
@@ -144,19 +170,16 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowItem" {
             if let row = tableView.indexPathForSelectedRow?.row {
                 let item = itemStore.allItems[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item as! Item
+                detailViewController.imageStore = imageStore
             }
         }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        navigationItem.leftBarButtonItem = editButtonItem
     }
 }

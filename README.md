@@ -56,15 +56,15 @@ Silver Challenge: Layout Guides (in progress)
 <li>
 <b>UITableView and UITableViewController</b><br>
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/HomepwnerWithSections/HomepwnerWithSections/ItemsViewController.swift#L13-L37">Sections</a><br>
-Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemStore.swift#L14-L19">Constant Row</a> <br>
-Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L60-L67">Customizing the Table</a> (height and font changes made in Main.storyboard)
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemStore.swift#L24-L32">Constant Row</a> <br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L33-L42">Customizing the Table</a> (height and font changes made in Main.storyboard)
 </li>
 
 <li>
 <b>Editing UITableView</b><br>
-Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L119-L122">Renaming the Delete Button</a><br>
-Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L132-L137">Preventing Reordering</a><br>
-Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L109-L117">Really Preventing Reordering</a>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L135-L138">Renaming the Delete Button</a><br>
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L148-L154">Preventing Reordering</a><br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ItemsViewController.swift#L125-L133">Really Preventing Reordering</a>
 </li>
 
 <li>
@@ -82,11 +82,29 @@ Bronze Challenge: More Stack Views (<a href="https://github.com/pankova/iOS-TheB
 Bronze Challenge: Displaying a Number Pad<br>
 <i>(Main.storyboard -> DetailViewController -> ValueTextField -> Attribure Inspector -> Keyboard Type -> Decimal Pad)</i><br>
 Silver Challenge: <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ColorBorderResponderTextField.swift#L9-L22">A Custom UITextField</a><br>
-Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L76-L82">Pushing More View Controllers</a> (new <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ChooseDateViewController.swift#L10-L24">VC</a>)
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L129-L136">Pushing More View Controllers</a> (new <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ChooseDateViewController.swift#L10-L24">VC</a>)
 </li>
 
 <li>
-<b>Camera (in progress)</b><br>
+<b>Camera</b><br>
+Bronze Challenge: Editing an Image<br>
+Silver Challenge: Removing an Image<br>
+Gold CHallenge: Camera Overlay (in progress)<br>
+</li>
+
+<li>
+<b>Saving, Loading, and Application States</b><br>
+Bronze Challenge: PNG<br>
+</li>
+
+li>
+<b>Size Classes</b><br>
+Bronze Challenge: Stacked Text Field and Labels<br>
+<i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> + -> hC, wAny -> Vertical)</i><br>
+</li>
+
+<li>
+<b>Touch Events and UIResponder</b> (in progress)<br>
 </li>
 </ol>
 

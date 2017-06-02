@@ -8,22 +8,23 @@
 
 import UIKit
 
-class Item: NSObject {
+class Item: NSObject, NSCoding {
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
     var dateCreated: Date
+    let itemKey: String
     
+    // MARK: - Class methods
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
         self.dateCreated = Date()
+        self.itemKey = NSUUID().uuidString
         
         super.init()
     }
-    
-    func getValue() -> Int { return valueInDollars }
     
     convenience init(random: Bool = false) {
         if random {
@@ -46,5 +47,29 @@ class Item: NSObject {
         } else {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
+    }
+    
+    func getValue() -> Int { return valueInDollars }
+    
+    
+    // MARK: - Serialization
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(dateCreated, forKey: "dateCreated")
+        aCoder.encode(itemKey, forKey: "itemKey")
+        aCoder.encode(serialNumber, forKey: "serialNumber")
+        
+        aCoder.encodeCInt(Int32(valueInDollars), forKey: "valueInDollars")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        dateCreated = aDecoder.decodeObject(forKey: "dateCreated") as! Date
+        itemKey = aDecoder.decodeObject(forKey: "itemKey") as! String
+        serialNumber = aDecoder.decodeObject(forKey: "serialNumber") as! String?
+
+        valueInDollars = aDecoder.decodeInteger(forKey: "valueInDollars")
+
+        super.init()
     }
 }

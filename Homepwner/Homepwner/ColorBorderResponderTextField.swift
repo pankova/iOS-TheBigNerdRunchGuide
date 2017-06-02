@@ -11,12 +11,15 @@ import UIKit
 class ColorBorderResponderTextField: UITextField {
     
     override func becomeFirstResponder() -> Bool {
-        self.borderStyle = .line
-        return super.becomeFirstResponder()
+        let a = super.becomeFirstResponder()
+        self.borderStyle = .none
+        return a
     }
     
     override func resignFirstResponder() -> Bool {
-        self.borderStyle = .none
-        return super.resignFirstResponder()
+        self.borderStyle = .line
+        super.resignFirstResponder()
+        self.borderStyle = .line
+        return true
     }
 }

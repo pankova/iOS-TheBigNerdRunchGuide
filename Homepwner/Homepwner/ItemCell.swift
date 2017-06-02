@@ -21,5 +21,4 @@ class ItemCell: UITableViewCell {
         let caption1Font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1)
         serialNumberLabel.font = caption1Font
     }
-    
 }
