@@ -97,7 +97,7 @@ Gold CHallenge: Camera Overlay (in progress)<br>
 Bronze Challenge: PNG<br>
 </li>
 
-li>
+<li>
 <b>Size Classes</b><br>
 Bronze Challenge: Stacked Text Field and Labels<br>
 <i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> + -> hC, wAny -> Vertical)</i><br>
