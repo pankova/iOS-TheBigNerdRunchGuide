@@ -105,8 +105,12 @@ Bronze Challenge: Stacked Text Field and Labels<br>
 
 <li>
 <b>Touch Events and UIResponder</b><br>
-Silver Challenge: Colors (the angle at which a line is drawn dictates its color)<br>
-Gold Challenge: Circles (use two thingers to draw circlew)<br>
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/TouchTracker/Line.swift#L23-L31">Colors</a> (the angle at which a line is drawn dictates its color)<br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/TouchTracker/TouchTracker/Circle.swift">Circles</a> (use two thingers to <a href = "https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/TouchTracker/TouchTracker/DrawView.swift#L79-L151">draw</a> circle)<br>
+</li>
+
+<li>
+<b>UIGestureRecognizer and UIMenuController (in progress)</b><br>
 </li>
 </ol>
 
