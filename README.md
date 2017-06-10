@@ -87,24 +87,26 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 
 <li>
 <b>Camera</b><br>
-Bronze Challenge: Editing an Image<br>
-Silver Challenge: Removing an Image<br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L46-L47">Editing an Image</a><br>
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/DetailViewController.swift#L74-L79">Removing an Image</a><br>
 Gold CHallenge: Camera Overlay (in progress)<br>
 </li>
 
 <li>
 <b>Saving, Loading, and Application States</b><br>
-Bronze Challenge: PNG<br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Homepwner/Homepwner/ImageStore.swift#L18-L19">PNG</a><br>
 </li>
 
 <li>
 <b>Size Classes</b><br>
 Bronze Challenge: Stacked Text Field and Labels<br>
-<i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> + -> hC, wAny -> Vertical)</i><br>
+<i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> "+ -> hC, wAny -> Vertical)</i><br>
 </li>
 
 <li>
-<b>Touch Events and UIResponder</b> (in progress)<br>
+<b>Touch Events and UIResponder</b><br>
+Silver Challenge: Colors (the angle at which a line is drawn dictates its color)<br>
+Gold Challenge: Circles (use two thingers to draw circlew)<br>
 </li>
 </ol>
 
