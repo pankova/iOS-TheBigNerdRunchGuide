@@ -28,16 +28,16 @@ struct Line {
         // set color by line's angle
         let hue = Float(alpha / 90)
         color = UIColor(hue: CGFloat(hue), saturation: 1, brightness: 0.9, alpha: 1)
-
     }
+    
+    func distanceBetweenPoints(a: CGPoint, b: CGPoint) -> CGFloat {
+        return pow(pow(a.x - b.x, 2) + pow(a.y - b.y, 2), 0.5)
+    }
+    //
     
     mutating func updateData(view: UIView, lastTouch: UITouch) {
         // update endPoint and color by last user's moving
         end = lastTouch.location(in: view)
         setColor()
-    }
-    
-    func distanceBetweenPoints(a: CGPoint, b: CGPoint) -> CGFloat {
-        return pow(pow(a.x - b.x, 2) + pow(a.y - b.y, 2), 0.5)
     }
 }
