@@ -19,6 +19,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
     
     var selectedLineIndex: Int?
     var moveRecognizer: UIPanGestureRecognizer!
+    var modulVelocity: CGFloat!
     
     override var canBecomeFirstResponder: Bool { return true }
     
@@ -41,7 +42,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         
         let path = UIBezierPath()
         
-        path.lineWidth = lineThickness
+        //path.lineWidth = lineThickness
+        path.lineWidth = modulVelocity/10
         path.lineCapStyle = CGLineCap.round
         
         path.move(to: line.begin)
@@ -292,6 +294,10 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         
         let point = gestureRecognizer.location(in: self)
         let index = indexOfLineAtPoint(point: point)
+        
+        let velocity = gestureRecognizer.velocity(in: self)
+        modulVelocity = pow(pow(velocity.x,2) + pow(velocity.y, 2), 0.5)
+        print("Velocity is: \(modulVelocity)")
         
         if selectedLineIndex == nil {
             return
