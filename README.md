@@ -111,7 +111,9 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 
 <li>
 <b>UIGestureRecognizer and UIMenuController</b><br>
-Silver Challenge: Mysterious Lines (in progress)<br>
+Silver Challenge: Mysterious Lines (there was some bug fixes)<br>
+Gold CHallenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/a0f4687953c403ef8fe801d3cc84adb0da5f45ae">Speed and size</a> (line thickness depends on drawing velocity)<br>
+Platinum Challenge: Colors (in progress)<br>
 </li>
 </ol>
 
