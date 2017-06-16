@@ -14,6 +14,7 @@ struct Line {
     var begin = CGPoint.zero
     var end = CGPoint.zero
     var color = UIColor(hue: 0, saturation: 1, brightness: 0.9, alpha: 1)
+    var thickness = CGFloat(0)
     
     init(beginPoint: CGPoint, endPoint: CGPoint) {
         begin = beginPoint
@@ -35,9 +36,14 @@ struct Line {
     }
     //
     
-    mutating func updateData(view: UIView, lastTouch: UITouch) {
+    mutating func updateData(view: UIView, lastTouch: UITouch, velocity: CGPoint) {
         // update endPoint and color by last user's moving
         end = lastTouch.location(in: view)
         setColor()
+        setThickness(velocity: velocity)
+    }
+    
+    mutating func setThickness(velocity: CGPoint) {
+        thickness = pow(pow(velocity.x,2) + pow(velocity.y, 2), 0.5) / 50
     }
 }

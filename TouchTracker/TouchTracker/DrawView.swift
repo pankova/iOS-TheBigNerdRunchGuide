@@ -19,7 +19,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
     
     var selectedLineIndex: Int?
     var moveRecognizer: UIPanGestureRecognizer!
-    var modulVelocity: CGFloat!
+    var velocity: CGPoint!
     
     override var canBecomeFirstResponder: Bool { return true }
     
@@ -42,8 +42,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         
         let path = UIBezierPath()
         
-        //path.lineWidth = lineThickness
-        path.lineWidth = modulVelocity/10
+        path.lineWidth = line.thickness
         path.lineCapStyle = CGLineCap.round
         
         path.move(to: line.begin)
@@ -131,7 +130,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             } else {
                 // it is the line
                 let key = NSValue(nonretainedObject: touch)
-                currentLines[key]?.updateData(view: self, lastTouch: touch)
+                currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity)
             }
         }
         setNeedsDisplay()
@@ -153,7 +152,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             } else {
                 // it is the line
                 let key = NSValue(nonretainedObject: touch)
-                currentLines[key]?.updateData(view: self, lastTouch: touch)
+                currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity)
                 
                 if currentLines[key] != nil {
                     finishedLines.append(currentLines[key]!)
@@ -295,9 +294,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         let point = gestureRecognizer.location(in: self)
         let index = indexOfLineAtPoint(point: point)
         
-        let velocity = gestureRecognizer.velocity(in: self)
-        modulVelocity = pow(pow(velocity.x,2) + pow(velocity.y, 2), 0.5)
-        print("Velocity is: \(modulVelocity)")
+        velocity = gestureRecognizer.velocity(in: self)
         
         if selectedLineIndex == nil {
             return
