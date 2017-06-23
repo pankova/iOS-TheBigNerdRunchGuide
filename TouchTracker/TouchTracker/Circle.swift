@@ -16,6 +16,7 @@ struct Circle {
     var radius = CGFloat(0)
     let firstFingerTouch: UITouch
     let secondFingerTouch: UITouch
+    var color = UIColor.red
     
     init(view: UIView, firstTouch: UITouch, secondTouch: UITouch) {
         firstFingerTouch = firstTouch
@@ -38,5 +39,9 @@ struct Circle {
     
     func circleCenter(a: CGPoint, b: CGPoint) -> CGPoint {
         return CGPoint(x: (a.x + b.x)/2, y: (a.y + b.y)/2)
+    }
+    
+    mutating func setUserColor(color: UIColor) {
+        self.color = color
     }
 }

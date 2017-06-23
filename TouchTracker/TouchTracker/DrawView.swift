@@ -19,7 +19,10 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
     
     var selectedLineIndex: Int?
     var moveRecognizer: UIPanGestureRecognizer!
-    var velocity: CGPoint!
+    var velocity: CGPoint?
+    
+    var userColor = UIColor.red
+    let menu = UIMenuController.shared
     
     override var canBecomeFirstResponder: Bool { return true }
     
@@ -70,25 +73,29 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
     }
     
     override func draw(_ rect: CGRect) {
-        //print(#function)
+        print(#function)
+        
         
         for i in 0..<finishedLines.count {
             finishedLines[i].color.setStroke()
             strokeLine(line: finishedLines[i])
         }
-        finishedCircleColor.setStroke()
         for i in 0..<finishedCircles.count {
+            finishedCircles[i].color.setStroke()
             strokeCircle(circle: finishedCircles[i])
         }
+        
+        // set user's choosen color or red color by default
+        userColor.setStroke()
+
         for (_, line) in currentLines {
-            line.color.setStroke()
             strokeLine(line: line)
             
         }
-        currentCircleColor.setStroke()
         for (_, circle) in currentCircles {
             strokeCircle(circle: circle)
         }
+        //
         
         if let index = selectedLineIndex {
             UIColor.green.setStroke()
@@ -104,7 +111,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         if touches.count == 2 {
             // it is a circle
             let touchArray = Array<UITouch>(touches)
-            let newCircle = Circle(view: self, firstTouch: touchArray[0], secondTouch: touchArray[1])
+            var newCircle = Circle(view: self, firstTouch: touchArray[0], secondTouch: touchArray[1])
+            newCircle.setUserColor(color: userColor)
             
             let key = NSValue(nonretainedObject: newCircle)
             currentCircles[key] = newCircle
@@ -112,7 +120,8 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             // it is a line
             for touch in touches {
                 let location = touch.location(in: self)
-                let newLine = Line(beginPoint: location, endPoint: location)
+                var newLine = Line(beginPoint: location, endPoint: location)
+                newLine.setUserColor(color: userColor)
                 let key = NSValue(nonretainedObject: touch)
                 currentLines[key] = newLine
             }
@@ -130,7 +139,9 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             } else {
                 // it is the line
                 let key = NSValue(nonretainedObject: touch)
-                currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity)
+                if velocity != nil {
+                    currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity!)
+                }
             }
         }
         setNeedsDisplay()
@@ -152,7 +163,9 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
             } else {
                 // it is the line
                 let key = NSValue(nonretainedObject: touch)
-                currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity)
+                if velocity != nil {
+                    currentLines[key]?.updateData(view: self, lastTouch: touch, velocity: velocity!)
+                }
                 
                 if currentLines[key] != nil {
                     finishedLines.append(currentLines[key]!)
@@ -223,11 +236,14 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         moveRecognizer.delegate = self
         moveRecognizer.cancelsTouchesInView = false
         addGestureRecognizer(moveRecognizer)
+        
+        let threeSwipeUpwardRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.threeFingerSwipeUpward(gestureRecognizer:)))
+        threeSwipeUpwardRecognizer.numberOfTouchesRequired = 3
+        threeSwipeUpwardRecognizer.direction = .up
+        addGestureRecognizer(threeSwipeUpwardRecognizer)
 
     }
     
-    let menu = UIMenuController.shared
-
     func tap(gestureRecognizer: UIGestureRecognizer) {
         
         print("Recognized a tap")
@@ -319,6 +335,13 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         }
     }
     
+    var onColorPickerRequired: (() -> Void)?
+    
+    func threeFingerSwipeUpward(gestureRecognizer: UIGestureRecognizer) {
+        print("Recognized a three-finger swipe upward")
+        self.onColorPickerRequired!()
+    }
+
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
