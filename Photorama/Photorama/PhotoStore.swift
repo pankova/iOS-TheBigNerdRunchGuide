@@ -21,7 +21,7 @@ class PhotoStore {
     let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
-
+        
     }()
     
     func fetchRecentPhotos(completion: @escaping (PhotosResult) -> Void) {
@@ -30,13 +30,18 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            let result = self.processRecentPhotoRequest(data: data, error: error)
+            let result = self.processRecentPhotoRequest(data: data, response: response, error: error)
             completion(result)
         }
         task.resume()
     }
     
-    func processRecentPhotoRequest(data: Data?, error: Error?) -> PhotosResult {
+    func processRecentPhotoRequest(data: Data?, response: URLResponse?, error: Error?) -> PhotosResult {
+        guard let httpResponse: HTTPURLResponse = response as? HTTPURLResponse else {
+            return .Failure(error!)
+        }
+        printKeyData(response: httpResponse)
+        
         guard let jsonData = data else {
             return .Failure(error!)
         }
@@ -50,7 +55,7 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            let result = self.processImageRequest(data: data, error: error)
+            let result = self.processImageRequest(data: data, response: response, error: error)
             
             if case let .Success(image) = result {
                 photo.image = image
@@ -60,9 +65,14 @@ class PhotoStore {
         task.resume()
     }
     
-    func processImageRequest(data: Data?, error: Error?) -> ImageResult {
+    func processImageRequest(data: Data?, response: URLResponse?, error: Error?) -> ImageResult {
+        guard let httpResponse: HTTPURLResponse = response as? HTTPURLResponse else {
+            return .Failure(error!)
+        }
+        printKeyData(response: httpResponse)
+        
         guard let
-        imageData = data,
+            imageData = data,
             let image = UIImage(data: imageData) else {
                 if data == nil {
                     return .Failure(error!)
@@ -71,5 +81,10 @@ class PhotoStore {
                 }
         }
         return .Success(image)
+    }
+    
+    func printKeyData(response: HTTPURLResponse) {
+        print(response.statusCode)
+        print(response.allHeaderFields)
     }
 }
