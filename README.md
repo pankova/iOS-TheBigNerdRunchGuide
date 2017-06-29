@@ -113,11 +113,12 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 <b>UIGestureRecognizer and UIMenuController</b><br>
 Silver Challenge: Mysterious Lines (there was some bug fixes)<br>
 Gold CHallenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/a0f4687953c403ef8fe801d3cc84adb0da5f45ae">Speed and size</a> (line thickness depends on drawing velocity)<br>
-Platinum Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/8126eb349d4c6b5df4aebd90e7b1249369b83d56">Colors</a><i>Have a three-finger swipe upward bring up a panel that shows colors. Selecting one of those colors should make any lines you draw afterward appear in that color. </i><br>
+Platinum Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/8126eb349d4c6b5df4aebd90e7b1249369b83d56">Colors</a> <i>Have a three-finger swipe upward bring up a panel that shows colors. Selecting one of those colors should make any lines you draw afterward appear in that color. </i><br>
 </li>
 
 <li>
-<b>Web services (in progress)</b><br>
+<b>Web services</b><br>
+Bronze Challenge: Printing the Response Information (in progress)<br>
 </li>
 
 </ol>
