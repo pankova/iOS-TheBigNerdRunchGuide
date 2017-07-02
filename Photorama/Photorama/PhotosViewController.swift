@@ -19,6 +19,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
+        countCellSize()
         
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
@@ -35,7 +36,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let photo = photoDataSource.photos[indexPath.row]
         
@@ -59,6 +60,24 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
                 destinationVC.photo = photo
                 destinationVC.store = store
             }
+        }
+    }
+    
+    func countCellSize() {
+        // default size if any error occurs
+        var cellWidth = CGFloat(10)
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let numberOfCellsPerRow: CGFloat = 3
+            let spacing = flowLayout.minimumLineSpacing
+            cellWidth = CGFloat((view.frame.width - (spacing * (numberOfCellsPerRow - 1)) - flowLayout.sectionInset.left - flowLayout.sectionInset.right) / numberOfCellsPerRow)
+            flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { _ in
+            self.countCellSize()
         }
     }
 }
