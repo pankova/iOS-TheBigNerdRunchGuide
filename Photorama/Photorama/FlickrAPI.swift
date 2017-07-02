@@ -72,9 +72,8 @@ struct FlickrAPI {
             guard let jsonDictionary = jsonObject as? [String:AnyObject],
                 let photos = jsonDictionary["photos"] as? [String:AnyObject],
                 let photosArray = photos["photo"] as? [[String:AnyObject]] else {
-                    return .Failure(FlickError.InvalidJSONData as! Error)
+                    return .Failure(FlickError.InvalidJSONData)
             }
-            //let stat = jsonDictionary["stat"]
             
             var finalPhotos = [Photo]()
             
