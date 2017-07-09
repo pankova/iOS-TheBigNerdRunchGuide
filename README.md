@@ -118,7 +118,12 @@ Platinum Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide
 
 <li>
 <b>Web services</b><br>
-Bronze Challenge: Printing the Response Information (in progress)<br>
+Bronze Challenge: Printing the Response Information<br>
+</li>
+
+<li>
+<b>Collection views</b><br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/613ee963c1a744a18b9f67a7b1f04e20da7b47b5">Creating a Custon Layout</a> (Display the photos in flipbook)<br>
 </li>
 
 </ol>
