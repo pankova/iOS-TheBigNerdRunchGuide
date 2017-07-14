@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 enum ImageResult {
     case Success(UIImage)
@@ -18,6 +19,9 @@ enum PhotoError: Error {
 }
 
 class PhotoStore {
+    let imageStore = ImageStore()
+    let coreDataStack = CoreDataStack(modelName: "Photorama")
+    
     let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
@@ -30,7 +34,25 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-            let result = self.processRecentPhotoRequest(data: data, response: response, error: error)
+            var result = self.processRecentPhotoRequest(data: data, response: response, error: error)
+            
+            if case let .Success(photos) = result {
+                let mainQueueContext = self.coreDataStack.mainQueueContext
+                mainQueueContext.performAndWait {
+                    try! mainQueueContext.obtainPermanentIDs(for: photos)
+                }
+                let objectIDs = photos.map{ $0.objectID }
+                let predicate = NSPredicate(format: "self IN %@", objectIDs)
+                let sortByDateTaken = NSSortDescriptor(key: "dateTaken", ascending: true)
+                do {
+                    try self.coreDataStack.saveChanges()
+                    
+                    let mainQueuePhotos = try self.fetchMainQueuePhotos(predicate:  predicate, sortDescriptors: [sortByDateTaken])
+                    result = .Success(mainQueuePhotos)
+                } catch let error {
+                    result = .Failure(error)
+                }
+            }
             completion(result)
         }
         task.resume()
@@ -45,17 +67,19 @@ class PhotoStore {
         guard let jsonData = data else {
             return .Failure(error!)
         }
-        return FlickrAPI.photosFromJSONData(data: jsonData)
+        return FlickrAPI.photosFromJSONData(data: jsonData, inContext: self.coreDataStack.mainQueueContext)
     }
     
     func fetchImageForPhoto(photo: Photo, completion: @escaping (ImageResult) -> Void) {
-        if let image = photo.image {
+        let photoKey = photo.photoKey
+        if let image = imageStore.imageForKey(key: photoKey) {
+            photo.image = image
             completion(.Success(image))
             return
         }
         
         let photoURL = photo.remoteURL
-        let request = URLRequest(url: photoURL)
+        let request = URLRequest(url: photoURL as URL)
         
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
@@ -64,6 +88,7 @@ class PhotoStore {
             
             if case let .Success(image) = result {
                 photo.image = image
+                self.imageStore.setImage(image: image, forkey: photoKey)
             }
             completion(result)
         }
@@ -91,5 +116,27 @@ class PhotoStore {
     func printKeyData(response: HTTPURLResponse) {
         print(response.statusCode)
         print(response.allHeaderFields)
+    }
+    
+    func fetchMainQueuePhotos(predicate: NSPredicate? = nil, sortDescriptors: [NSSortDescriptor]? = nil) throws -> [Photo] {
+        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+        fetchRequest.sortDescriptors = sortDescriptors
+        fetchRequest.predicate = predicate
+        
+        let mainQueueContext = self.coreDataStack.mainQueueContext
+        var mainQueuePhotos: [Photo]?
+        var fetchRequestError: Error?
+        mainQueueContext.performAndWait {
+            do {
+                mainQueuePhotos = try mainQueueContext.fetch(fetchRequest)
+            } catch let error {
+                fetchRequestError = error
+            }
+        }
+        
+        guard let photos = mainQueuePhotos else {
+            throw fetchRequestError!
+        }
+        return photos
     }
 }
