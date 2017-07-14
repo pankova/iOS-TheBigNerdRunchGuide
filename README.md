@@ -100,7 +100,7 @@ Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/b
 <li>
 <b>Size Classes</b><br>
 Bronze Challenge: Stacked Text Field and Labels<br>
-<i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> "+ -> hC, wAny -> Vertical)</i><br>
+<i>(Main.storyboard -> StackView -> Attribute Inspector -> Axis -> "+" -> hC, wAny -> Vertical)</i><br>
 </li>
 
 <li>
@@ -118,12 +118,17 @@ Platinum Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide
 
 <li>
 <b>Web services</b><br>
-Bronze Challenge: Printing the Response Information<br>
+Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/491c5f25ca317486a7edfb4e9e77969d8da1c52b">Printing the Response Information</a><br>
 </li>
 
 <li>
 <b>Collection views</b><br>
-Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/613ee963c1a744a18b9f67a7b1f04e20da7b47b5">Creating a Custon Layout</a> (Display the photos in flipbook)<br>
+Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/613ee963c1a744a18b9f67a7b1f04e20da7b47b5">Creating a Custom Layout</a> (Display the photos in flipbook)<br>
+</li>
+
+<li>
+<b>Core Data</b><br>
+Bronze Challenge: Photo View Count (in progress)<br>
 </li>
 
 </ol>
