@@ -31,11 +31,4 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         updateWithImage(image: nil)
     }
-    
-    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
-        print(#function)
-        super.apply(layoutAttributes)
-        
-        layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-    }
 }
