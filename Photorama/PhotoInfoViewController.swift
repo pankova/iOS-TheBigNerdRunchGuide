@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoInfoViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var viewCount: UILabel!
     
     var photo: Photo! {
         didSet {
@@ -26,10 +27,22 @@ class PhotoInfoViewController: UIViewController {
             case let .Success(image):
                 OperationQueue.main.addOperation {
                     self.imageView.image = image
+                    self.photo.viewCount += 1
+                    self.viewCount.text = String(self.photo.viewCount)
                 }
             case let .Failure(error):
                 print("Error fetching image for photo: \(error)")
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowTags" {
+            let navController = segue.destination as! UINavigationController
+            let tagController = navController.topViewController as! TagsViewController
+            
+            tagController.store = store
+            tagController.photo = photo
         }
     }
 }

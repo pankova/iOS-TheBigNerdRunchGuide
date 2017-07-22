@@ -21,5 +21,16 @@ public class Photo: NSManagedObject {
         remoteURL = NSURL()
         photoKey = NSUUID().uuidString
         dateTaken = NSDate()
+        viewCount = 0
+    }
+    
+    func addTagObject(tag: NSManagedObject) {
+        let currentTags = mutableSetValue(forKey: "tags")
+        currentTags.add(tag)
+    }
+    
+    func removeTagObject(tag: NSManagedObject) {
+        let currentTags = mutableSetValue(forKey: "tags")
+        currentTags.remove(tag)
     }
 }

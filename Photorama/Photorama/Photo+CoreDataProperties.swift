@@ -20,6 +20,8 @@ extension Photo {
     @NSManaged public var photoKey: String
     @NSManaged public var remoteURL: NSURL
     @NSManaged public var title: String
+    @NSManaged public var viewCount: Int16
+    @NSManaged public var tags: Set<NSManagedObject>
     
 }
 
