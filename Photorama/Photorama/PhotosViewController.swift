@@ -8,9 +8,10 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController, UICollectionViewDelegate {
+class PhotosViewController: UIViewController, UICollectionViewDelegate, UITabBarDelegate, PhotoInfoDelegate{
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var tabBar: UITabBar!
     var store: PhotoStore!
     let photoDataSource = PhotoDataSource()
     
@@ -23,37 +24,27 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
-//            OperationQueue.main.addOperation() {
-//                switch photosResult {
-//                case let .Success(photos):
-//                    print("Successfully found \(photos.count) recent photos.")
-//                    self.photoDataSource.photos = photos
-//                case let .Failure(error):
-//                    self.photoDataSource.photos.removeAll()
-//                    print("Error fetching recent photos: \(error)")
-//                }
-//                self.collectionView.reloadSections(NSIndexSet(index: 0) as IndexSet)
-//            }
             let sortByDateTaken = NSSortDescriptor(key: "dateTaken", ascending: true)
             let allPhotos = try! self.store.fetchMainQueuePhotos(predicate:  nil, sortDescriptors: [sortByDateTaken])
             OperationQueue.main.addOperation {
-                self.photoDataSource.photos = allPhotos
+                self.photoDataSource.shownPhotos = allPhotos
                 self.collectionView.reloadSections(NSIndexSet(index:0) as IndexSet)
             }
-            
         }
+        self.tabBar.selectedItem = tabBar.items?[0]
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let photo = photoDataSource.photos[indexPath.row]
+        let photo = photoDataSource.shownPhotos[indexPath.row]
         
         store.fetchImageForPhoto(photo: photo) { (result) -> Void in
             OperationQueue.main.addOperation {
-                let photoIndex = self.photoDataSource.photos.index(of: photo)!
-                let photoIndexPath = IndexPath(row: photoIndex, section: 0)
-                
-                if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
-                    cell.updateWithImage(image: photo.image)
+                if let photoIndex = self.photoDataSource.shownPhotos.index(of: photo) {
+                    let photoIndexPath = IndexPath(row: photoIndex, section: 0)
+                    
+                    if let cell = self.collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
+                        cell.updateWithImage(photo: photo)
+                    }
                 }
             }
         }
@@ -62,10 +53,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowPhoto" {
             if let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first {
-                let photo = photoDataSource.photos[selectedIndexPath.row]
+                let photo = photoDataSource.shownPhotos[selectedIndexPath.row]
                 let destinationVC = segue.destination as! PhotoInfoViewController
                 destinationVC.photo = photo
                 destinationVC.store = store
+                destinationVC.delegate = self
             }
         }
     }
@@ -86,5 +78,21 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         coordinator.animate(alongsideTransition: nil) { _ in
             self.countCellSize()
         }
+    }
+        
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 0 {
+            self.photoDataSource.setShownAllPhotos()
+        } else {
+            self.photoDataSource.setShownFavoritePhotos()
+        }
+        self.collectionView.reloadData()
+    }
+    
+    func favoriteStatusChangedDelegate(photoInfo: PhotoInfoViewController) {
+        if let photo = photoInfo.photo {
+            self.photoDataSource.changeStatusFavoritePhoto(photo: photo)
+        }
+        self.collectionView.reloadData()
     }
 }

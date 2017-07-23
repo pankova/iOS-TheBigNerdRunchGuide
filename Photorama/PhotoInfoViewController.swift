@@ -9,8 +9,23 @@
 import UIKit
 
 class PhotoInfoViewController: UIViewController {
+    var delegate: PhotoInfoDelegate?
+
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var viewCount: UILabel!
+    @IBOutlet var starActive: UIImageView!
+    @IBOutlet var starNoActive: UIImageView!
+    
+    @IBAction func changeFavoritesStatus(sender: AnyObject) {
+        if self.photo.isFavorite {
+            self.photo.isFavorite = false
+            self.setStarNoActive()
+        } else {
+            self.photo.isFavorite = true
+            self.setStarActive()
+        }
+        self.delegate?.favoriteStatusChangedDelegate(photoInfo: self)
+    }
     
     var photo: Photo! {
         didSet {
@@ -29,6 +44,12 @@ class PhotoInfoViewController: UIViewController {
                     self.imageView.image = image
                     self.photo.viewCount += 1
                     self.viewCount.text = String(self.photo.viewCount)
+                    
+                    if self.photo.isFavorite {
+                        self.setStarActive()
+                    } else {
+                        self.setStarNoActive()
+                    }
                 }
             case let .Failure(error):
                 print("Error fetching image for photo: \(error)")
@@ -45,4 +66,15 @@ class PhotoInfoViewController: UIViewController {
             tagController.photo = photo
         }
     }
+    
+    private func setStarActive() {
+        self.starActive.isHidden = false
+        self.starNoActive.isHidden = true
+    }
+    
+    private func setStarNoActive() {
+        self.starActive.isHidden = true
+        self.starNoActive.isHidden = false
+    }
+    
 }

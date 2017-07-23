@@ -11,11 +11,16 @@ import UIKit
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet var star: UIImageView!
     
-    func updateWithImage(image: UIImage?) {
-        if let imageToDisplay = image {
+    func updateWithImage(photo: Photo?) {
+        star.isHidden = true
+        if let imageToDisplay = photo?.image {
             spinner.stopAnimating()
             imageView.image = imageToDisplay
+            if (photo?.isFavorite)! {
+                star.isHidden = false
+            }
         } else {
             spinner.startAnimating()
             imageView.image = nil
@@ -24,11 +29,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        updateWithImage(image: nil)
+        updateWithImage(photo: nil)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        updateWithImage(image: nil)
+        updateWithImage(photo: nil)
     }
 }

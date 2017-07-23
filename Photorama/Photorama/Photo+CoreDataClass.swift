@@ -22,6 +22,7 @@ public class Photo: NSManagedObject {
         photoKey = NSUUID().uuidString
         dateTaken = NSDate()
         viewCount = 0
+        isFavorite = false
     }
     
     func addTagObject(tag: NSManagedObject) {
