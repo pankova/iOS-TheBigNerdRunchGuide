@@ -27,6 +27,7 @@
 		A85D5CF11F1B716E00B8CB76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D5CE91F1B716E00B8CB76 /* ViewController.swift */; };
 		A85D5CF31F1B74DB00B8CB76 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D5CF21F1B74DB00B8CB76 /* TagsViewController.swift */; };
 		A85D5CF51F1B76B600B8CB76 /* TagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85D5CF41F1B76B600B8CB76 /* TagDataSource.swift */; };
+		A8CF66D31F245DCC0089A43D /* PhotoInfoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CF66D21F245DCC0089A43D /* PhotoInfoDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A85D5CE91F1B716E00B8CB76 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A85D5CF21F1B74DB00B8CB76 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		A85D5CF41F1B76B600B8CB76 /* TagDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
+		A8CF66D21F245DCC0089A43D /* PhotoInfoDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfoDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				A85D5CF41F1B76B600B8CB76 /* TagDataSource.swift */,
 				A83FA41F1EFF767900E5DA6A /* Info.plist */,
 				A83FA4291F00062F00E5DA6A /* PhotoStore.swift */,
+				A8CF66D21F245DCC0089A43D /* PhotoInfoDelegate.swift */,
 				A85D5CE11F1B716E00B8CB76 /* Assets.xcassets */,
 				A85D5CE21F1B716E00B8CB76 /* Base.lproj */,
 				A85D5CE31F1B716E00B8CB76 /* CoreDataStack.swift */,
@@ -188,6 +191,7 @@
 				A85D5CF51F1B76B600B8CB76 /* TagDataSource.swift in Sources */,
 				A85D5CEE1F1B716E00B8CB76 /* Photo+CoreDataClass.swift in Sources */,
 				A83FA4261EFF76C400E5DA6A /* PhotosViewController.swift in Sources */,
+				A8CF66D31F245DCC0089A43D /* PhotoInfoDelegate.swift in Sources */,
 				A83FA42A1F00062F00E5DA6A /* PhotoStore.swift in Sources */,
 				A85D5CF11F1B716E00B8CB76 /* ViewController.swift in Sources */,
 				A85D5CED1F1B716E00B8CB76 /* ImageStore.swift in Sources */,
