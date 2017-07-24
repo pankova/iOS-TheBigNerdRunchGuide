@@ -50,7 +50,7 @@ Bronze Challenge:
 <b>Controlling Animations</b><br>
 Bronze Challenge: 
 <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Quiz/Quiz/ViewController.swift#L87-L105">Spring Animations</a><br> 
-Silver Challenge: Layout Guides (in progress)
+Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/c714f35c3c3d1a9e4585743e2d5da0309bfa2b96">Layout Guides</a>
 </li>
 
 <li>
@@ -129,11 +129,19 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/com
 <li>
 <b>Core Data</b><br>
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/PhotoInfoViewController.swift#L45-L46">Photo View Count</a><br>
+
+![alt text](Screenshots/infovc.png)
+
 </li>
 
 <li>
 <b>Core Data Relationships</b><br>
 Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/e15bf103a8ad9c29af62f227d729870074c38c5b">Favorites</a><br>
+
+![alt text](Screenshots/allphotos.png)
+
+![alt text](Screenshots/favphotos.png)
+
 </li>
 
 </ol>
