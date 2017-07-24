@@ -90,7 +90,7 @@ class ViewController: UIViewController {
                                    usingSpringWithDamping: 1.0, initialSpringVelocity:0.5,
                                    options: [],
                                    animations: {
-                                    self.currentQuestionLabel.alpha = 0
+                                    self.currentQuestionLabel.alpha = 1
                                     self.nextQuestionLabel.alpha = 1
                                     self.view.layoutIfNeeded()
                                     },
@@ -109,12 +109,22 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        nextQuestionLabel.alpha = 0
+        nextQuestionLabel.alpha = 1
     }
     
     func updateOffScreenLabel() {
         let screenWidth = view.frame.width
         nextQuestionLabelCenterXConstraint.constant = -screenWidth
         view.isUserInteractionEnabled = true
+    }
+    
+    // 8: silver
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { _ in
+            let screenWidth = self.view.frame.width
+            self.currentQuestionLabelCenterXConstraint.constant = 0
+            self.nextQuestionLabelCenterXConstraint.constant = -screenWidth
+        }
     }
 }
