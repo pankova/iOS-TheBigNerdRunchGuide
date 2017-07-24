@@ -130,7 +130,7 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/com
 <b>Core Data</b><br>
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/PhotoInfoViewController.swift#L45-L46">Photo View Count</a><br>
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/infovc.png" alt="InfoVC image"/>
 </p>
 
