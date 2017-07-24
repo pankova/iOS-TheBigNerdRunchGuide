@@ -130,7 +130,7 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/com
 <b>Core Data</b><br>
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/PhotoInfoViewController.swift#L45-L46">Photo View Count</a><br>
 
-![alt text](Screenshots/infovc.png)
+![alt text](Photorama/Screenshots/infovc.png)
 
 </li>
 
@@ -138,9 +138,9 @@ Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/b
 <b>Core Data Relationships</b><br>
 Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/e15bf103a8ad9c29af62f227d729870074c38c5b">Favorites</a><br>
 
-![alt text](Screenshots/allphotos.png)
+![alt text](Photorama/Screenshots/allphotos.png)
 
-![alt text](Screenshots/favphotos.png)
+![alt text](Photorama/Screenshots/favphotos.png)
 
 </li>
 
