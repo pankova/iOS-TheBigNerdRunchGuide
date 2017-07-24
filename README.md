@@ -114,6 +114,11 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blo
 Silver Challenge: Mysterious Lines (there was some bug fixes)<br>
 Gold CHallenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/a0f4687953c403ef8fe801d3cc84adb0da5f45ae">Speed and size</a> (line thickness depends on drawing velocity)<br>
 Platinum Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/8126eb349d4c6b5df4aebd90e7b1249369b83d56">Colors</a> <i>Have a three-finger swipe upward bring up a panel that shows colors. Selecting one of those colors should make any lines you draw afterward appear in that color. </i><br>
+ 
+<p align="left" border-image=1><kbd>
+  <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/TouchTracker/Screenshots/colorpicker.png" alt="InfoVC image"/></kbd>
+</p>
+ 
 </li>
 
 <li>
@@ -131,7 +136,7 @@ Gold Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/com
 Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/PhotoInfoViewController.swift#L45-L46">Photo View Count</a><br>
 
 <p align="left">
-  <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/infovc.png" alt="InfoVC image"/>
+  <kbd><img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/infovc.png" alt="InfoVC image"/></kbd>
 </p>
 
 </li>
@@ -141,8 +146,8 @@ Bronze Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/b
 Silver Challenge: <a href="https://github.com/pankova/iOS-TheBigNerdRunchGuide/commit/e15bf103a8ad9c29af62f227d729870074c38c5b">Favorites</a><br>
  
 <p align="left">
-  <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/all.png" alt="AllPhotos image"/>
-  <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/favp.png" alt="FavPhotos image"/>
+  <kbd><img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/all.png" alt="AllPhotos image"/></kbd><kbd>
+  <img src="https://github.com/pankova/iOS-TheBigNerdRunchGuide/blob/master/Photorama/Screenshots/favp.png" alt="FavPhotos image"/></kbd>
 </p>
 
 </li>
