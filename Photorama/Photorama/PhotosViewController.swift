@@ -15,6 +15,10 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UITabBar
     var store: PhotoStore!
     let photoDataSource = PhotoDataSource()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //self.tabBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +36,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UITabBar
             }
         }
         self.tabBar.selectedItem = tabBar.items?[0]
+        self.tabBar.isHidden = false
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -89,10 +94,11 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate, UITabBar
         self.collectionView.reloadData()
     }
     
+    
+    
     func favoriteStatusChangedDelegate(photoInfo: PhotoInfoViewController) {
-        if let photo = photoInfo.photo {
-            self.photoDataSource.changeStatusFavoritePhoto(photo: photo)
-        }
+        self.photoDataSource.updateDataSource()
+
         self.collectionView.reloadData()
     }
 }

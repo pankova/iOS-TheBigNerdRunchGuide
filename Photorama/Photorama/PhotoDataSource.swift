@@ -11,7 +11,7 @@ import UIKit
 class PhotoDataSource: NSObject, UICollectionViewDataSource {
     var shownPhotos = [Photo]()
     var allPhotos = [Photo]()
-    var favoritesPhotos = [Photo]()
+    //var favoritesPhotos = [Photo]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shownPhotos.count
@@ -24,22 +24,45 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
         cell.updateWithImage(photo: photo)
         return cell
     }
-    
+
     func setShownFavoritePhotos() {
         self.allPhotos = self.shownPhotos
-        self.shownPhotos = self.favoritesPhotos
+        if self.allPhotos.count > 0 {
+            self.listIndex = 1
+            self.chooseFavoritePhotos()
+
+        }
+    }
+    
+    func chooseFavoritePhotos() {
+        var favoritesPhotos = [Photo]()
+        for photo in self.allPhotos {
+            if photo.isFavorite {
+                favoritesPhotos.append(photo)
+            }
+        }
+        self.shownPhotos = favoritesPhotos
     }
     
     func setShownAllPhotos() {
+        self.listIndex = 0
         self.shownPhotos = self.allPhotos
     }
     
-    func changeStatusFavoritePhoto(photo: Photo) {
-        if let indexPath = self.favoritesPhotos.index(of: photo) {
-            self.favoritesPhotos.remove(at: indexPath)
-            self.shownPhotos = self.favoritesPhotos
-        } else {
-            self.favoritesPhotos.append(photo)
+    var listIndex = 0
+    
+    func updateDataSource() {
+        if self.listIndex == 1{
+            self.chooseFavoritePhotos()
         }
+        //if photo.isFavorite {//let indexPath = self.favoritesPhotos.index(of: photo) {
+            //self.favoritesPhotos.remove(at: indexPath)
+            //photo.isFavorite = false
+            //self.shownPhotos = self.favoritesPhotos
+        //} else {
+          //  photo.isFavorite = true
+            //self.favoritesPhotos.append(photo)
+        //}
+        print(123)
     }
 }

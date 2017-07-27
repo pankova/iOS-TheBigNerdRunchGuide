@@ -25,6 +25,11 @@ class PhotoInfoViewController: UIViewController {
             self.setStarActive()
         }
         self.delegate?.favoriteStatusChangedDelegate(photoInfo: self)
+        do {
+            try self.store.coreDataStack.saveChanges()
+        } catch let error {
+            print("Core Data save fav failed: \(error)")
+        }
     }
     
     var photo: Photo! {
@@ -43,6 +48,11 @@ class PhotoInfoViewController: UIViewController {
                 OperationQueue.main.addOperation {
                     self.imageView.image = image
                     self.photo.viewCount += 1
+                    do {
+                        try self.store.coreDataStack.saveChanges()
+                    } catch let error {
+                        print("Core Data save fav failed: \(error)")
+                    }
                     self.viewCount.text = String(self.photo.viewCount)
                     
                     if self.photo.isFavorite {
